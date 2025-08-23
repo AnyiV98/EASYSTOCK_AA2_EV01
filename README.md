@@ -10,9 +10,9 @@ Proyecto en fase inicial. Carpeta principal subida con estructura modular. Pendi
 
 - `/Clientes`: módulo para gestión de clientes
 - `/Inventario`: módulo para validar stock
-- ´/Productos` : módulo para gestion de productos
-- ´/Index` : menú principal
-- ´/Login` : ingreso y registro de usuarios 
+- `/Porducto`: módulo para gestion de productos
+- `/Index`: menú principal
+- `/Login`: ingreso y registro de usuarios 
 - `/Styles`: estilos visuales del sistema
 - `README.md`: documentación del proyecto
 - `.gitignore`: exclusión de archivos innecesarios

@@ -1,47 +1,42 @@
-import modelo.Usuario;
 import dao.UsuarioDAO;
+import modelo.Usuario;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        // Simulación de prueba de conexión a la base de datos
-        System.out.println("🎉 Simulación: conexión probada correctamente (sin DB real).");
-
-        // creación de usuario
+        Scanner scanner = new Scanner(System.in);
         UsuarioDAO dao = new UsuarioDAO();
-        Usuario nuevo = new Usuario();
-        nuevo.setNoIdentificacion("123456789");
-        nuevo.setNombre("Anyi");
-        nuevo.setApellido("Velásquez");
-        nuevo.setCorreo("anyi@example.com");
-        nuevo.setIdRol(2); // ejemplo
-        nuevo.setContrasena("segura123");
-        nuevo.setEstado("activo");
 
-        System.out.println("Simulación: Usuario creado correctamente: " + nuevo.getNombre());
+        System.out.println("=== LOGIN ===");
+        System.out.print("Correo: ");
+        String correo = scanner.nextLine();
+        System.out.print("Contraseña: ");
+        String contrasena = scanner.nextLine();
 
-        //  listado de usuarios
-        List<Usuario> usuarios = List.of(nuevo); // lista simulada
-        System.out.println("📋 Lista de usuarios:");
+        // Buscar todos los usuarios
+        List<Usuario> usuarios = dao.obtenerUsuarios();
+        boolean loginExitoso = false;
+
         for (Usuario u : usuarios) {
-            System.out.println(" - " + u.getNombre() + " " + u.getApellido());
+            if (u.getCorreo().equalsIgnoreCase(correo) && u.getContrasena().equals(contrasena)) {
+                loginExitoso = true;
+                System.out.println("✅ Login exitoso. Bienvenido: " + u.getNombre() + " " + u.getApellido());
+                break;
+            }
         }
 
-        //  actualización
-        if (!usuarios.isEmpty()) {
-            Usuario primero = usuarios.get(0);
-            primero.setNombre("Anyi Actualizada");
-            primero.setEstado("inactivo");
-            System.out.println("Simulación: Usuario actualizado a: " + primero.getNombre());
+        if (!loginExitoso) {
+            System.out.println("❌ Usuario o contraseña incorrectos.");
         }
 
-        // eliminación
-        if (!usuarios.isEmpty()) {
-            Usuario ultimo = usuarios.get(usuarios.size() - 1);
-            System.out.println("Simulación: Usuario eliminado: " + ultimo.getNombre());
+        // Mostrar lista completa de usuarios
+        System.out.println("\n📋 Lista de usuarios en la base de datos:");
+        for (Usuario u : usuarios) {
+            System.out.println(" - " + u.getNombre() + " " + u.getApellido() + " | Rol ID: " + u.getIdRol());
         }
 
-        System.out.println("✅ Programa ejecutado correctamente (sin conexión real).");
+        scanner.close();
     }
 }

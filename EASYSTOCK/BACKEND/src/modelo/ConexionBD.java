@@ -7,11 +7,10 @@ import java.sql.SQLException;
 public class ConexionBD {
 
     // ⚙️ Parámetros de conexión
-    private static final String URL = "jdbc:sqlserver://localhost;databaseName=Easystock;integratedSecurity=true;";
-    // Si quieres usar usuario/contraseña en lugar de integratedSecurity, usa:
-    // private static final String URL = "jdbc:sqlserver://localhost;databaseName=Easystock;";
+    // private static final String URL = "jdbc:sqlserver://localhost;databaseName=PROYECTO_EASYSTOCK";
+    private static final String URL = "jdbc:sqlserver://localhost:1433;databaseName=PROYECTO_EASYSTOCK;encrypt=false";
     private static final String USUARIO = "sa";
-    private static final String CONTRASENA = "Anyi0516";
+    private static final String CONTRASENA = "NuevaPassword123";
 
     // 🔌 Obtener conexión
     public static Connection getConnection() {

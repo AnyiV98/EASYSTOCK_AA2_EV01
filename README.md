@@ -22,3 +22,25 @@ Proyecto en fase inicial. Carpeta principal subida con estructura modular. Pendi
 
 **Anyi Vanesa Velasquez Ortiz**  
 Proyecto académico – Evidencia AA2
+
+##Actualizando documentación del proyecto
+
+## Tecnologías Utilizadas
+
+- **Java** con conexión JDBC  
+- **SQL Server** para gestión de datos  
+- **Git y GitHub** para control de versiones  
+- **Visual Studio Code** como entorno de desarrollo
+
+## Historial de Cambios Relevantes
+
+- `25/08/2025`: Se subió la carpeta `EASYSTOCK` con el backend actualizado.  
+- `23/08/2025`: Primer commit con estructura base del proyecto.  
+- `22/08/2025`: Configuración inicial del repositorio y documentación.
+
+
+## Autora
+
+**Anyi Vanesa Velásquez Ortiz** 
+
+

@@ -18,11 +18,6 @@ Proyecto en fase inicial. Carpeta principal subida con estructura modular. Pendi
 - `.gitignore`: exclusión de archivos innecesarios
 - `LICENSE`: licencia MIT
 
-## Autor
-
-**Anyi Vanesa Velasquez Ortiz**  
-Proyecto académico – Evidencia AA2
-
 ##Actualizando documentación del proyecto
 
 ## Tecnologías Utilizadas
@@ -38,9 +33,5 @@ Proyecto académico – Evidencia AA2
 - `23/08/2025`: Primer commit con estructura base del proyecto.  
 - `22/08/2025`: Configuración inicial del repositorio y documentación.
 
-
-## Autora
-
-**Anyi Vanesa Velásquez Ortiz** 
 
 

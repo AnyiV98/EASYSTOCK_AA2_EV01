@@ -18,7 +18,16 @@ Proyecto en fase inicial. Carpeta principal subida con estructura modular. Pendi
 - `.gitignore`: exclusión de archivos innecesarios
 - `LICENSE`: licencia MIT
 
-##Actualizando documentación del proyecto
+## Actualizando documentación del proyecto
+
+## Configuración local recomendada:
+- Usuario: sa
+- Contraseña: NuevaPassword123
+- Puerto: 1433
+- Base de datos: PROYECTO_EASYSTOCK
+
+## Nota: Esta configuración permite mantener una única cadena de conexión en el backend para facilitar la colaboración.
+
 
 ## Tecnologías Utilizadas
 

@@ -106,18 +106,6 @@ h4 {
   text-align: left;
 }
 
-.Inventario-contenedor{
-  color: #65dce0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
-  width: 90%;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-  
-}
 
 .Inventario h3 {
   margin: 0;
@@ -125,14 +113,6 @@ h4 {
   width: 100%;
 }
 
-.Inventario-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  gap: 10px;
-  margin-bottom: 20px;
-  width: 100%;
-}
 
 /* Espacio entre filtros y tabla */
 .dataTables_wrapper .dataTables_length,
@@ -298,4 +278,95 @@ table.Inventario td {
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
   background-color: #0a9396 !important;
   color: #fff !important;
+}
+
+
+
+
+/* === TARJETAS KPI === */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 20px 0 40px 0;
+}
+
+.card {
+  background: #003a4e;
+  border: 1px solid #0a9396;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.card h3 {
+  font-size: 16px;
+  color: #65dce0;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.inventario-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* gráfico ocupa menos, tabla más */
+  gap: 15px; /* espacio entre gráfico y tabla */
+  margin-top: 30px;
+  align-items: flex-start;
+}
+
+/* Ajustar gráfico */
+.chart-container {
+  width: 80%;
+  background: #002b3a;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+
+.chart-legend {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.chart-legend div {
+  display: flex;
+  align-items: baseline;  
+  justify-content: space-between;
+  margin: 0;            
+  padding: 2px 0;      
+  color: #fff;
+}
+
+.legend-color {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 6px 0 0;
+}
+
+
+
+.chart-legend span,
+.chart-legend .legend-value {
+  margin: 0;         /* elimina márgenes por defecto */
+  padding: 0;        /* elimina paddings extra */
+  line-height: 1.2;  /* asegura interlineado reducido */
+}
+
+
+/* Ajustar tabla */
+.tabla-inventario {
+  width: 100%;
+  font-size: 20px; /* tabla un poco más compacta */
 }

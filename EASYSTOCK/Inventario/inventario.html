@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EasyStock | Inventario</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 
 
@@ -26,10 +26,8 @@
 </head>
 <body>
   <div class="sidebar">
-    <div class="menu-icon">&#9776;
-    </div>
-    <div class="user-info">Felipe Casanova
-    </div>
+    <div class="menu-icon">&#9776;</div>
+    <div class="user-info">Felipe Casanova</div>
     <div class="menu">
       <span>
         <a href="../index.html"><i class="fas fa-sync-alt"></i> Actualizar datos</a>
@@ -55,21 +53,75 @@
     <div class="Inventario">
        <h3><i class="fas fa-file-invoice"></i> Inventario</h3>
     </div>
-
-<div class="Inventario-contenedor">
+<!-- Tarjetas KPI -->
+<div class="cards-container">
+  <div class="card">
+    <h3>TOTAL PRODUCTOS</h3>
+    <p>120</p>
+  </div>
+  <div class="card">
+    <h3>PRODUCTOS EN STOCK</h3>
+    <p>3,500</p>
+  </div>
+  <div class="card">
+    <h3>BAJO STOCK</h3>
+    <p>12</p>
+  </div>
+  <div class="card">
+    <h3>VALOR TOTAL INVENTARIO</h3>
+    <p>$25,500,000</p>
+  </div>
 </div>
+<!-- CONTENIDO DE INVENTARIO -->
 
+<div class="inventario-layout">
+<!-- Gráfico de dona -->
+  <div class="chart-container">
+  <canvas id="donutChart"></canvas>
+    <div class="chart-legend">
+      <div><span class="legend-color" style="background-color:#1d4ed8;"></span> Herramientas <span class="legend-value">60%</span></div>
+      <div><span class="legend-color" style="background-color:#3b82f6;"></span> Pinturas <span class="legend-value">25%</span></div>
+      <div><span class="legend-color" style="background-color:#60a5fa;"></span> Cocina <span class="legend-value">15%</span></div>
+    </div>
+    
+    <!-- Script para activar Grafico -->
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('donutChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Herramientas', 'Pinturas', 'Cocina'],
+      datasets: [{
+        data: [60, 25, 15],
+        backgroundColor: ['#1d4ed8', '#3b82f6', '#60a5fa'],
+        borderWidth: 0
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false }, // ocultamos la leyenda por defecto
+      },
+      cutout: '50%' // tamaño del agujero interno
+    }
+  });
+</script>
+
+  </div>
+
+<!-- Tabla de productos -->
+<div class="tabla-inventario">
 <section>
   <table class="Inventario">
     <thead>
       <tr>
-        <th>ID PRODUCTO</th>
+        <th>ID</th>
         <th>CÓDIGO DE BARRAS</th>
         <th>NOMBRE PRODUCTO</th>
-        <th>CATEGORÍA</th>
         <th>STOCK</th>
         <th>PRECIO</th>
-        <th>DETALLE</th>
         <th>FECHA INGRESO</th>
       </tr>
     </thead>
@@ -78,10 +130,8 @@
         <td>PROD001</td>
         <td>770000000001</td>
         <td>Martillo 16oz</td>
-        <td>Herramientas</td>
         <td>30</td>
         <td>$22.000</td>
-        <td>Truper, cabeza de acero y mango de fibra de vidrio</td>
         <td>10/08/2025</td>
       </tr>
 
@@ -89,10 +139,8 @@
         <td>PROD002</td>
         <td>770000000002</td>
         <td>Destornillador estrella</td>
-        <td>Herramientas</td>
         <td>50</td>
         <td>$13.000</td>
-        <td>Stanley, punta de acero templado y mango de goma</td>
         <td>10/08/2025</td>
       </tr>
 
@@ -100,10 +148,8 @@
         <td>PROD003</td>
         <td>770000000003</td>
         <td>Pintura blanca 1L</td>
-        <td>Pinturas</td>
         <td>15</td>
         <td>$35.000</td>
-        <td>Corona, acrílica base agua</td>
         <td>10/08/2025</td>
       </tr>
 
@@ -111,10 +157,8 @@
         <td>PROD004</td>
         <td>770000000004</td>
         <td>Lava Platos</td>
-        <td>Cocina</td>
         <td>6</td>
         <td>$167.000</td>
-        <td>Lavaplatos doble tina en acero inoxidable, marca Haceb.</td>
         <td>10/08/2025</td>
       </tr>
 
@@ -122,10 +166,8 @@
         <td>PROD005</td>
         <td>770000000005</td>
         <td>Soldador eléctrico tipo lápiz 60W</td>
-        <td>Herramientas</td>
         <td>7</td>
         <td>$1.256.000</td>
-        <td>Soldador de punta fina para trabajos de precisión. Potencia de 60 vatios, calentamiento rápido, mango ergonómico resistente al calor.</td>
         <td>10/08/2025</td>
       </tr>
 
@@ -133,35 +175,28 @@
         <td>PROD006</td>
         <td>770000000006</td>
         <td>Puntilla de acero 2" caja x 100und</td>
-        <td>Herramientas</td>
         <td>20</td>
         <td>$25.000</td>
-        <td>Puntilla galvanizada de 2 pulgadas, cabeza plana.</td>
         <td>10/08/2025</td>
       </tr>
 
     </tbody>
   </table>
 </section>
-
-<!-- Script para activar DataTables -->
+  <!-- Script para activar DataTables -->
 <script>
   $(document).ready(function () {
     $('table.Inventario').DataTable({
-      pageLength: 4,
-      lengthMenu: [[4, 8, 10], [4, 8, 10]],
+      pageLength: 10,
+      lengthMenu: [[10, 20, 30], [10, 20, 30]],
       language: {
         url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json'
       }
     });
   });
-</script>
+</script> 
+</div>
+</div>
 
 </body>
 </html>
-
-<div class="resumen">
-  <p><strong>Total de productos:</strong> 6</p>
-  <p><strong>Valor total del inventario:</strong> $1.518.000</p>
-  <p><strong>Categoría con más stock:</strong> Herramientas</p>
-</div>

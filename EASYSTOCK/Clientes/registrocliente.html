@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EasyStock | Cliente</title>
+  <title>EasyStock | Registro Cliente</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Lora&family=Montserrat&family=Noto+Sans&family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../Styles/clientes.css">
+  <link rel="stylesheet" href="../Styles/registrocliente.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -34,7 +34,7 @@
       <h3><i class="fas fa-user-plus"></i> Registro de Cliente</h3>
     </div>
 
-    <form action="#" method="POST" class="formulario-cliente" onsubmit="mostrarAlerta(); return false;">
+    <form action="./gestionclientes.html" method="post" class="formulario-cliente" novalidate>
       
       <fieldset>
         <legend><i class="fas fa-user-tag"></i> Tipo de Cliente</legend>
@@ -126,14 +126,11 @@
       </fieldset>
 
       
-      <div class="form-buttons">
-        <button type="submit" class="btn-guardar">
-          <i class="fas fa-save"></i> Guardar
-        </button>
-        <button type="reset" class="btn-cancelar">
-          <i class="fas fa-times"></i> Cancelar
-        </button>
-      </div>
+          <div class="contenedor-b">
+        
+        <input type="submit" class="boton"  value="Guardar">
+        <input type="submit" class="boton"  value="Cancelar">
+    </div>
 
     </form>
   </div>

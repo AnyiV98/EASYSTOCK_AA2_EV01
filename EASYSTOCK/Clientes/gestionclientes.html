@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EasyStock | Clientes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+<!-- DataTables CSS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+
+<!-- DataTables JS -->
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+
+
+<link rel="stylesheet" href="../Styles/gestionclientes.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="menu-icon">&#9776;</div>
+    <div class="user-info">Felipe Casanova</div>
+    <div class="menu">
+      <span>
+        <a href="../index.html"><i class="fas fa-sync-alt"></i> Actualizar datos</a>
+      </span>
+     <span>
+ <a href="../index.html" class="menu-itemcom"><i class="fas fa-user-cog"></i> Mantención de usuarios</a>
+     </span>
+     <span>
+      <a href="../index.html" class="menu-itemlog"><i class="fas fa-cogs"></i> Configuración</a>
+      </span>
+      </div>
+  </div>
+  
+    <div class="main-content">
+<a href="../index.html">
+         <img class="contenedor-m" src="../image/icono.png" alt="Logo">
+    </a>
+
+    <h1>Ferretería El Grillo</h1>
+    <h4>Administrador</h4>
+
+    <section class="Clientes">
+    <div class="Clientes">
+       <h3><i class="fas fa-user-plus"></i> Clientes</h3>
+    </div>
+
+
+  <div class="clientes-header">
+      <div class="boton-nuevo-cliente">
+  <a href="./registrocliente.html">
+    <button class="btn-nuevo-cliente"><i class="fas fa-plus"></i> Nuevo Cliente</button>
+  </a>
+  </div>
+
+
+</div>
+
+<!-- Tarjetas KPI -->
+<div class="cards-container">
+  <div class="card">
+    <h3>TOTAL CLIENTES</h3>
+    <p>260</p>
+  </div>
+  <div class="card">
+    <h3>CLIENTES ACTIVOS</h3>
+    <p>85</p>
+  </div>
+</div>
+
+<!-- Tabla clientes -->
+ 
+<section>
+  <table class="tabla-cliente">
+    <thead>
+      <tr>
+        <th>No. IDENTIFICACIÓN</th>
+        <th>NOMBRE</th>
+        <th>DIRECCIÓN</th>
+        <th>eMAIL</th>
+        <th>TELEFONO</th>
+        <th>ESTADO</th>
+        <th>ACCIONES</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1234567</td>
+        <td>Luis Carrillo</td>
+        <td>calle 123</td>
+        <td>Luis@prueba.com</td>
+        <td>999 9999</td>
+        <td>Activo</td>
+        <td>
+          <div class="acciones">
+            <button class="btn-ver" title="Ver">🔍</button>
+            <button class="btn-editar" title="Editar">🖊</button>
+            <button class="btn-cancelar" title="Eliminar">🗑</button>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>1234512</td>
+        <td>Diana Delgado</td>
+        <td>calle 5C</td>
+        <td>Diana@prueba.com</td>
+        <td>887 9999</td>
+        <td>Activo</td>
+        <td>
+          <div class="acciones">
+            <button class="btn-ver" title="Ver">🔍</button>
+            <button class="btn-editar" title="Editar">🖊</button>
+            <button class="btn-cancelar" title="Eliminar">🗑</button>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>1234533</td>
+        <td>Eduardo Espinosa</td>
+        <td>carrera 112</td>
+        <td>Eduardo@prueba.com</td>
+        <td>789 9999</td>
+        <td>Inactivo</td>
+        <td>
+          <div class="acciones">
+            <button class="btn-ver" title="Ver">🔍</button>
+            <button class="btn-editar" title="Editar">🖊</button>
+            <button class="btn-cancelar" title="Eliminar">🗑</button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>8564533</td>
+        <td>Marlen Asprilla</td>
+        <td>Transversal 212</td>
+        <td>Marlen@prueba.com</td>
+        <td>661 4999</td>
+        <td>Activo</td>
+        <td>
+          <div class="acciones">
+            <button class="btn-ver" title="Ver">🔍</button>
+            <button class="btn-editar" title="Editar">🖊</button>
+            <button class="btn-cancelar" title="Eliminar">🗑</button>
+          </div>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</section>
+<!-- Script para activar DataTables -->
+<script>
+  $(document).ready(function () {
+    $('.tabla-cliente').DataTable({
+      pageLength: 4,
+      lengthMenu: [[4, 8, 10], [4, 8, 10]],
+      language: {
+        url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json'
+      }
+    });
+  });
+</script>
+</body>
+</html>

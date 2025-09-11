@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EasyStock | Editar Usuario</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="../Styles/editarusuario.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    
+  <div class="sidebar">
+    <div class="menu-icon">&#9776;
+    </div>
+    <div class="user-info">Felipe Casanova
+    </div>
+    <div class="menu">
+      <span>
+        <a href="../index.html"><i class="fas fa-sync-alt"></i> Actualizar datos</a href="./index.html">
+      </span>
+     <span>
+        <a href="../Usuarios/gestusuarios.html" class="menu-itemcom"><i class="fas fa-user-cog"></i> Mantención de usuarios</a>
+     </span>
+     <span>
+      <a href="../index.html" class="menu-itemlog"><i class="fas fa-cogs"></i> Configuración</a>
+      </span>
+      </div>
+  </div>
+
+    <div class="main-content">
+<a href="../index.html">
+         <img class="contenedor-m" src="../image/icono.png" alt="Logo">
+    </a>
+
+    <h1>Ferretería El Grillo</h1>
+    <h4>Administrador</h4>
+
+    <div class="Agregar">
+      <h3><i class="fas fa-user-edit"></i> Editar Usuario</h3>
+    </div>
+
+    <form action="#" method="POST" class="formulario-usuario">
+  <fieldset>
+    <legend><i class="fas fa-user"></i> Información</legend>
+
+    <div class="fila">
+      <div class="form-group">
+        <label for="documento">N. Documento:</label>
+        <input type="text" id="documento" name="documento" value="123456" required>
+      </div>
+
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" value="Arley" required>
+      </div>
+    </div>
+
+    <div class="fila">
+      <div class="form-group">
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" value="Ortiz" required>
+      </div>
+    
+      <div class="form-group">
+        <label for="cargo">Cargo:</label>
+        <input type="text" id="cargo" name="cargo" value="Vendedor" required>
+      </div>
+    </div>
+
+    <div class="fila">
+      <div class="form-group">
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo" value="arley@example.com" required>
+      </div>
+    
+      <div class="form-group">
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" value="267 0087">
+      </div>
+    </div>
+
+    <div class="fila">
+      <div class="form-group">
+        <label for="contraseña">Contraseña:</label>
+        <input type="text" id="contraseña" name="contraseña" value="0022" required>
+      </div>
+
+      <div class="form-group">
+        <label for="estado_cuenta">Estado de la cuenta:</label>
+        <select id="estado_cuenta" name="estado_cuenta" required>
+          <option value="Activo" selected>Activo</option>
+          <option value="Inactivo">Inactivo</option>
+        </select>
+      </div>
+    </div>  
+
+    <div class="fila">
+      <div class="form-group">
+        <label for="permisos">Permisos:</label>
+        <select id="permisos" name="permisos" required>
+          <option value="Administrador" selected>Administrador</option>
+          <option value="Vendedor">Vendedor</option>
+          <option value="Cliente">Cliente</option>
+        </select>
+      </div>
+    </div>
+
+   <div class="form-buttons">
+  <button type="submit" class="btn-guardar">
+    <i class="fas fa-save"></i> Guardar Cambios
+  </button>
+  <a href="gestusuarios.html">
+    <button type="button" class="btn-cancelar">
+      <i class="fas fa-times"></i> Cancelar
+    </button>
+  </a>
+</div>
+
+
+
+  </fieldset>
+</form>
+
+<!--script funcionamiento de accion editar-->
+<script>
+  // Datos de prueba (mock) mientras no tengas backend
+  const usuarios = {
+    "123456": { documento:"123456", nombre:"Arley", apellido:"Ortiz", correo:"arley@example.com", telefono:"267 0087", cargo:"Vendedor", contraseña:"0022", estado_cuenta:"Activo", permisos:"Administrador" },
+    "987654": { documento:"987654", nombre:"Luz", apellido:"Fernandez", correo:"luz@example.com", telefono:"265 8877", cargo:"Aux. logística", contraseña:"6655", estado_cuenta:"Activo", permisos:"Vendedor" },
+    "654326": { documento:"654326", nombre:"Felipe", apellido:"Casanova", correo:"felipe@example.com", telefono:"267 4466", cargo:"Administrador", contraseña:"17654", estado_cuenta:"Activo", permisos:"Administrador" }
+  };
+
+  // Obtener ID de la URL
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+
+  // Si el usuario existe, rellenar el formulario
+  if (usuarios[id]) {
+    document.getElementById("documento").value = usuarios[id].documento;
+    document.getElementById("nombre").value = usuarios[id].nombre;
+    document.getElementById("apellido").value = usuarios[id].apellido;
+    document.getElementById("correo").value = usuarios[id].correo;
+    document.getElementById("telefono").value = usuarios[id].telefono;
+    document.getElementById("cargo").value = usuarios[id].cargo;
+    document.getElementById("contraseña").value = usuarios[id].contraseña;
+    document.getElementById("estado_cuenta").value = usuarios[id].estado_cuenta;
+    document.getElementById("permisos").value = usuarios[id].permisos;
+  }
+
+  // Captura el evento submit del formulario
+  document.querySelector(".formulario-usuario").addEventListener("submit", (e) => {
+    e.preventDefault(); // Evita que recargue la página
+
+    // Tomamos los datos actualizados
+    const datosActualizados = {
+      documento: document.getElementById("documento").value,
+      nombre: document.getElementById("nombre").value,
+      apellido: document.getElementById("apellido").value,
+      correo: document.getElementById("correo").value,
+      telefono: document.getElementById("telefono").value,
+      cargo: document.getElementById("cargo").value,
+      contraseña: document.getElementById("contraseña").value,
+      estado_cuenta: document.getElementById("estado_cuenta").value,
+      permisos: document.getElementById("permisos").value,
+    };
+
+    // Por ahora solo mostramos en consola (cuando tengas backend, aquí harás el fetch/POST)
+    console.log("Usuario actualizado:", datosActualizados);
+
+    alert("✅ Cambios guardados correctamente (simulación)");
+    window.location.href = "gestusuarios.html"; // Redirige de vuelta a la lista
+  });
+</script>
+
+</body>

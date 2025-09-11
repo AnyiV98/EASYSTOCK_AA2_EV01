@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EasyStock | Gestión Usuarios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+<!-- DataTables CSS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+
+<!-- DataTables JS -->
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+
+
+<link rel="stylesheet" href="../Styles/gestusuarios.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="menu-icon">&#9776;
+    </div>
+    <div class="user-info">Felipe Casanova
+    </div>
+    <div class="menu">
+      <span>
+        <a href="../index.html"><i class="fas fa-sync-alt"></i> Actualizar datos</a>
+      </span>
+     <span>
+ <a href="../index.html" class="menu-itemcom"><i class="fas fa-user-cog"></i> Mantención de usuarios</a>
+     </span>
+     <span>
+      <a href="../index.html" class="menu-itemlog"><i class="fas fa-cogs"></i> Configuración</a>
+      </span>
+      </div>
+  </div>
+  
+    <div class="main-content">
+<a href="../index.html">
+         <img class="contenedor-m" src="../image/icono.png" alt="Logo">
+    </a>
+
+    <h1>Ferretería El Grillo</h1>
+    <h4>Administrador</h4>
+
+    <section class="Usuarios">
+    <div class="GestionUsuarios">
+       <h3><i class="fas fa-user-check"></i> Gestión Usuarios</h3>
+    </div>
+
+  <div class="filtro-usuarios">
+  <label for="estado">Estado:</label>
+  <select id="estado">
+    <option value="">Todos</option>
+    <option value="Activo">Activo</option>
+    <option value="Inactivo">Inactivo</option>
+    <option value="Suspendido">Suspendido</option>
+  </select>
+
+  <label for="cargo">Cargo:</label>
+  <select id="cargo">
+    <option value="">Todos</option>
+    <option value="Administrador">Administrador</option>
+    <option value="Vendedor">Vendedor</option>
+    <option value="Aux. logística">Aux. logistica</option>
+  </select>
+
+  <button onclick="filtrarUsuarios()">Aplicar filtros</button>
+</div>
+
+    
+<section>
+  <table class="tabla-usuarios">
+    <thead>
+      <tr>
+        <th>N. DOCUMENTO</th>
+        <th>NOMBRES</th>
+        <th>APELLIDOS</th>
+        <th>CORREO</th>
+        <th>TELEFONO</th>
+        <th>CARGO</th>
+        <th>CONTRASEÑA</th>
+        <th>ESTADO</th>
+        <th>ACCIONES</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>123456</td>
+        <td>Arley</td>
+        <td>Ortiz</td>
+        <td>arley@example.com</td>
+        <td>267 0087</td>
+        <td>Vendedor</td>
+        <td>0022</td>
+        <td>Activo</td>
+        <td>
+          <div class="acciones">
+            <button class="btn-ver" data-id="123456" title="Ver">🔍</button>
+            <button class="btn-editar" title="Editar" onclick="location.href='editarusuario.html'">🖊</button>
+            <button class="btn-cancelar" data-id="123456" title="Eliminar">🗑</button>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>987654</td>
+        <td>Luz</td>
+        <td>Fernandez</td>
+        <td>luz@example.com</td>
+        <td>265 8877</td>
+        <td>Aux. logistica</td>
+        <td>6655</td>
+        <td>Activo</td>
+        <td>
+          <div class="acciones">
+            <button class="btn-ver" data-id="987654" title="Ver">🔍</button>
+            <button class="btn-editar" data-id="987654" title="Editar">🖊</button>
+            <button class="btn-cancelar" data-id="987654" title="Eliminar">🗑</button>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>654326</td>
+        <td>Felipe</td>
+        <td>Casanova</td>
+        <td>felipe@example.com</td>
+        <td>267 4466</td>
+        <td>Administrador</td>
+        <td>17654</td>
+        <td>Activo</td>
+        <td>
+          <div class="acciones">
+            <button class="btn-ver" data-id="654326" title="Ver">🔍</button>
+            <button class="btn-editar" data-id="654326" title="Editar">🖊</button>
+            <button class="btn-cancelar" data-id="654326" title="Eliminar">🗑</button>
+          </div>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</section>
+
+<!-- Script para activar DataTables -->
+<script>
+  $(document).ready(function () {
+    $('.tabla-usuarios').DataTable({
+      pageLength: 4,
+      lengthMenu: [[4, 8, 10], [4, 8, 10]],
+      language: {
+        url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json'
+      }
+    });
+  });
+</script>
+
+
+<!--script para filtros-->
+
+<script>
+function filtrarUsuarios() {
+  const estado = document.getElementById("estado").value;
+  const cargo = document.getElementById("cargo").value;
+  const filas = document.querySelectorAll(".tabla-usuarios tbody tr");
+
+  filas.forEach(fila => {
+    const cargoFila = fila.cells[5].textContent.trim();
+    const estadoFila = fila.cells[7].textContent.trim();
+
+    if ((estado === "" || estado === estadoFila) &&
+        (cargo === "" || cargo === cargoFila)) {
+      fila.style.display = "";
+    } else {
+      fila.style.display = "none";
+    }
+  });
+}
+</script>
+
+
+<!--scrpit para funcion de la accion editar-->
+<script>
+  // Selecciona todos los botones de editar
+  document.querySelectorAll(".btn-editar").forEach(boton => {
+    boton.addEventListener("click", () => {
+      // Obtiene el ID del usuario desde el atributo data-id
+      const idUsuario = boton.getAttribute("data-id");
+      // Redirige a la página de edición con el ID en la URL
+      window.location.href = "editarusuario.html?id=" + idUsuario;
+    });
+  });
+</script>
+
+<!--script para boton eliminar usuario-->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Selecciona todos los botones de eliminar (clase btn-cancelar en tu HTML)
+  document.querySelectorAll(".btn-cancelar").forEach(boton => {
+    boton.addEventListener("click", () => {
+      const idUsuario = boton.getAttribute("data-id"); // ID del usuario
+
+      // Confirmación
+      const confirmar = confirm("⚠️ ¿Seguro que deseas eliminar este usuario?");
+      if (confirmar) {
+        // Elimina la fila de la tabla directamente
+        const fila = boton.closest("tr");
+        fila.remove();
+
+        alert("✅ Usuario eliminado correctamente (simulación)");
+      }
+    });
+  });
+});
+</script>
+
+<!--Script para boton ver-->
+<script>
+  // Detectar clic en botones "Ver"
+  document.querySelectorAll(".btn-ver").forEach(boton => {
+    boton.addEventListener("click", () => {
+      const idUsuario = boton.getAttribute("data-id");
+      // Redirige a verusuario.html pasando el id
+      window.location.href = "verusuario.html?id=" + idUsuario;
+    });
+  });
+</script>
+
+
+
+</body>
+</html>

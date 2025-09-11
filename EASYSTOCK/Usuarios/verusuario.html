@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EasyStock | Ver usuario</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="../Styles/verusuario.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    
+  <div class="sidebar">
+    <div class="menu-icon">&#9776;
+    </div>
+    <div class="user-info">Felipe Casanova
+    </div>
+    <div class="menu">
+      <span>
+        <a href="../index.html"><i class="fas fa-sync-alt"></i> Actualizar datos</a href="./index.html">
+      </span>
+     <span>
+        <a href="../Usuarios/gestusuarios.html" class="menu-itemcom"><i class="fas fa-user-cog"></i> Mantención de usuarios</a>
+     </span>
+     <span>
+      <a href="../index.html" class="menu-itemlog"><i class="fas fa-cogs"></i> Configuración</a>
+      </span>
+      </div>
+  </div>
+
+    <div class="main-content">
+<a href="../index.html">
+         <img class="contenedor-m" src="../image/icono.png" alt="Logo">
+    </a>
+
+    <h1>Ferretería El Grillo</h1>
+    <h4>Administrador</h4>
+
+    <div class="Agregar">
+      <h3><i class="fas fa-eye"></i> Ver Usuario</h3>
+    </div>
+
+  <form action="#" method="POST" class="formulario-usuario">
+  <fieldset>
+    <legend><i class="fas fa-user"></i> Información</legend>
+
+    <!-- Fila 1 -->
+    <div class="fila">
+      <div class="form-group">
+        <label>N. Documento:</label>
+        <input type="text" id="documento" readonly>
+      </div>
+
+      <div class="form-group">
+        <label>Nombre:</label>
+        <input type="text" id="nombre" readonly>
+      </div>
+    </div>
+
+    <!-- Fila 2 -->
+    <div class="fila">
+      <div class="form-group">
+        <label>Apellido:</label>
+        <input type="text" id="apellido" readonly>
+      </div>
+
+      <div class="form-group">
+        <label>Cargo:</label>
+        <input type="text" id="cargo" readonly>
+      </div>
+    </div>
+
+    <!-- Fila 3 -->
+    <div class="fila">
+      <div class="form-group">
+        <label>Correo:</label>
+        <input type="email" id="correo" readonly>
+      </div>
+
+      <div class="form-group">
+        <label>Teléfono:</label>
+        <input type="tel" id="telefono" readonly>
+      </div>
+    </div>
+
+    <!-- Fila 4 -->
+    <div class="fila">
+      <div class="form-group">
+        <label>Contraseña:</label>
+        <input type="text" id="contraseña" readonly>
+      </div>
+
+      <div class="form-group">
+        <label>Estado de la cuenta:</label>
+        <input type="text" id="estado" readonly>
+      </div>
+    </div>
+
+    <!-- Fila 5 -->
+    <div class="fila">
+      <div class="form-group">
+        <label>Permisos:</label>
+        <input type="text" id="permisos" readonly>
+      </div>
+
+      <div class="form-group"></div> <!-- vacío para mantener el par -->
+    </div>
+
+    <!-- Botón -->
+    <div class="form-buttons">
+  <a href="gestusuarios.html">
+    <button type="button" class="btn-cancelar">
+      <i class="fas fa-arrow-left"></i> Volver
+    </button>
+  </a>
+</div>
+
+
+  </fieldset>
+</form>
+
+<script>
+    // Simulación de base de datos
+    const usuarios = [
+      {
+        id: "123456",
+        nombre: "Arley",
+        apellido: "Ortiz",
+        cargo: "Vendedor",
+        correo: "arley@example.com",
+        telefono: "267 0087",
+        contraseña: "0022",
+        estado: "Activo",
+        permisos: "Vendedor"
+      },
+      {
+        id: "987654",
+        nombre: "Luz",
+        apellido: "Fernandez",
+        cargo: "Aux. logística",
+        correo: "luz@example.com",
+        telefono: "265 8877",
+        contraseña: "6655",
+        estado: "Activo",
+        permisos: "Aux. logística"
+      },
+      {
+        id: "654326",
+        nombre: "Felipe",
+        apellido: "Casanova",
+        cargo: "Administrador",
+        correo: "felipe@example.com",
+        telefono: "267 4466",
+        contraseña: "17654",
+        estado: "Activo",
+        permisos: "Administrador"
+      }
+    ];
+
+    // Obtener el id de la URL
+    const params = new URLSearchParams(window.location.search);
+    const idUsuario = params.get("id");
+
+    // Buscar usuario en el array
+    const usuario = usuarios.find(u => u.id === idUsuario);
+
+    if (usuario) {
+      document.getElementById("documento").value = usuario.id;
+      document.getElementById("nombre").value = usuario.nombre;
+      document.getElementById("apellido").value = usuario.apellido;
+      document.getElementById("cargo").value = usuario.cargo;
+      document.getElementById("correo").value = usuario.correo;
+      document.getElementById("telefono").value = usuario.telefono;
+      document.getElementById("contraseña").value = usuario.contraseña;
+      document.getElementById("estado").value = usuario.estado;
+      document.getElementById("permisos").value = usuario.permisos;
+    } else {
+      alert("Usuario no encontrado");
+    }
+  </script>
+
+</body>

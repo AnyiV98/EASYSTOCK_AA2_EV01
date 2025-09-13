@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EasyStock | Proveedores</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+<!-- DataTables CSS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+
+<!-- DataTables JS -->
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+
+
+<link rel="stylesheet" href="../Styles/gestionproveedor.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="menu-icon">&#9776;</div>
+    <div class="user-info">Felipe Casanova</div>
+    <div class="menu">
+      <span>
+        <a href="../index.html"><i class="fas fa-sync-alt"></i> Actualizar datos</a>
+      </span>
+     <span>
+ <a href="../index.html" class="menu-itemcom"><i class="fas fa-user-cog"></i> Mantención de usuarios</a>
+     </span>
+     <span>
+      <a href="../index.html" class="menu-itemlog"><i class="fas fa-cogs"></i> Configuración</a>
+      </span>
+      </div>
+  </div>
+  
+    <div class="main-content">
+<a href="../index.html">
+         <img class="contenedor-m" src="../image/icono.png" alt="Logo">
+    </a>
+
+    <h1>Ferretería El Grillo</h1>
+    <h4>Administrador</h4>
+
+    <section class="proveedor">
+   <div class="proveedor-header">
+        <h3><i class="fas fa-truck"></i> Lista de Proveedores</h3>
+        <div class="boton-nuevo-proveedor">
+          <a href="./registroproveedor.html">
+            <button class="btn-nuevo-proveedor"><i class="fas fa-plus"></i> Nuevo Proveedor</button>
+          </a>
+        </div>
+      </div>
+
+
+  <!-- Tabla clientes -->
+ 
+<section>
+  <table class="tabla-proveedor">
+    <thead>
+      <tr>
+        <th>NOMBRE DEL PROVEEDOR</th>
+        <th>EMPRESA</th>
+        <th>NIT</th>
+        <th>CONTACTO PRINCIPAL</th>
+        <th>TELEFONO</th>
+        <th>TIEMPO DE RELACION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Proveedor A</td>
+        <td>Empresa A</td>
+        <td>99.999.999-9</td>
+        <td>Luis Alfonso</td>
+        <td>123456789</td>
+        <td>2 años</td>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Proveedor B</td>
+        <td>Empresa B</td>
+        <td>88.888.888-8</td>
+        <td>Marta Campos</td>
+        <td>111223344</td>
+        <td>3 años</td>
+      </tr>
+
+      <tr>
+        <td>Proveedor C</td>
+        <td>Empresa C</td>
+        <td>77.777.777-7</td>
+        <td>Augusto Bolivar</td>
+        <td>123665599</td>
+        <td>11 meses</td>
+     </tr>
+      <tr>
+        <td>Proveedor D</td>
+        <td>Empresa D</td>
+        <td>66.666.666-6</td>
+        <td>Luis Alfonso</td>
+        <td>123156479</td>        
+        <td>3 meses</td>
+     </tr>
+
+    </tbody>
+  </table>
+</section>
+<!-- Script para activar DataTables -->
+<script>
+  $(document).ready(function () {
+    $('.tabla-proveedor').DataTable({
+      pageLength: 4,
+      lengthMenu: [[4, 8, 10], [4, 8, 10]],
+      language: {
+        url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json'
+      }
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EasyStock | Operaciones</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+<!-- DataTables CSS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+
+<!-- DataTables JS -->
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+
+
+<link rel="stylesheet" href="../Styles/gestionoperaciones.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="menu-icon">&#9776;</div>
+    <div class="user-info">Felipe Casanova</div>
+    <div class="menu">
+      <span>
+        <a href="../index.html"><i class="fas fa-sync-alt"></i> Actualizar datos</a>
+      </span>
+     <span>
+ <a href="../index.html" class="menu-itemcom"><i class="fas fa-user-cog"></i> Mantención de usuarios</a>
+     </span>
+     <span>
+      <a href="../index.html" class="menu-itemlog"><i class="fas fa-cogs"></i> Configuración</a>
+      </span>
+      </div>
+  </div>
+  
+    <div class="main-content">
+<a href="../index.html">
+         <img class="contenedor-m" src="../image/icono.png" alt="Logo">
+    </a>
+
+    <h1>Ferretería El Grillo</h1>
+    <h4>Administrador</h4>
+
+    <section class="operaciones">
+   <div class="operaciones-header">
+        <h3><i class="fas fa-truck"></i> Operaciones y Logística</h3>
+        <div class="boton-nuevo-envio">
+          <a href="">
+            <button class="btn-nuevo-envio"><i class="fas fa-plus"></i> Nuevo envio</button>
+          </a>
+        </div>
+      </div>
+
+<!-- Tabla Listado de pedidos -->
+    <section class="pedidosactivos">
+      <h2>Pedidos Activos</h2>
+      <table class="tabla-pedidosactivos">
+    <thead>
+      <tr>
+        <th>No. PEDIDO</th>
+        <th>CLIENTE</th>
+        <th>DIRECCIÓN DESTINO</th>
+        <th>CIUDAD DESTINO</th>
+        <th>VALOR TOTAL</th>
+        <th>FECHA ENTREGA ESTIMADA</th>
+        <th>ESTADO</th>
+        <th>ACCIONES</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Luis Carrillo</td>
+        <td>calle 123</td>
+        <td>Bogotá</td>
+        <td>100000</td>
+        <td>25/09/2025</td>
+        <td>En tránsito</td>
+        <td>
+          <div class="acciones">
+            <button class="btn-ver" title="Ver">🔍</button>
+            <button class="btn-reprogramar" title="Reprogramar">🖊</button>
+            <button class="btn-devolver" title="Devolucion">↩</button>
+            <button class="btn-comentar" title="Comentar">💬</button>
+            
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>2</td>
+        <td>Adriana Castellanos</td>
+        <td>calle 789</td>
+        <td>Bogotá</td>
+        <td>58000</td>
+        <td>27/09/2025</td>
+        <td>Pendiente</td>
+        <td>
+          <div class="acciones">
+            <button class="btn-ver" title="Ver">🔍</button>
+            <button class="btn-reprogramar" title="Reprogramar">🖊</button>
+            <button class="btn-devolver" title="Devolucion">↩</button>
+            <button class="btn-comentar" title="Comentar">💬</button>
+            
+          </div>
+        </td>
+      </tr>
+<tr>
+        <td>3</td>
+        <td>Carlos Restrepo</td>
+        <td>avenida 1213</td>
+        <td>Bogotá</td>
+        <td>89100</td>
+        <td>30/09/2025</td>
+        <td>Retrasado</td>
+        <td>
+          <div class="acciones">
+            <button class="btn-ver" title="Ver">🔍</button>
+            <button class="btn-reprogramar" title="Reprogramar">🖊</button>
+            <button class="btn-devolver" title="Devolucion">↩</button>
+            <button class="btn-comentar" title="Comentar">💬</button>
+            
+          </div>
+        </td>
+      </tr>
+<tr>
+        <td>4</td>
+        <td>Alejandra Vargas</td>
+        <td>Tv 23</td>
+        <td>Bogotá</td>
+        <td>53247</td>
+        <td>25/09/2025</td>
+        <td>Entregado</td>
+        <td>
+          <div class="acciones">
+            <button class="btn-ver" title="Ver">🔍</button>
+            <button class="btn-reprogramar" title="Reprogramar">🖊</button>
+            <button class="btn-devolver" title="Devolucion">↩</button>
+            <button class="btn-comentar" title="Comentar">💬</button>
+            
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </section>
+    <section class="devoluciones">
+      <h2>devoluciones</h2>
+  </section>
+  <section class="historialpedidos">
+      <h2>historial pedidos</h2>
+  </section>
+<!-- Script para activar DataTables -->
+<script>
+  $(document).ready(function () {
+    $('.tabla-pedidosactivos').DataTable({
+      pageLength: 4,
+      lengthMenu: [[4, 8, 10], [4, 8, 10]],
+      language: {
+        url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json'
+      }
+    });
+  });
+</script>
+</body>
+</html>

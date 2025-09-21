@@ -114,6 +114,7 @@ h4 {
 }
 
 
+
 /* Espacio entre filtros y tabla */
 .dataTables_wrapper .dataTables_length,
 .dataTables_wrapper .dataTables_filter {
@@ -369,4 +370,33 @@ table.Inventario td {
 .tabla-inventario {
   width: 100%;
   font-size: 20px; /* tabla un poco más compacta */
+}
+
+/* === BOTÓN GESTIÓN PRODUCTOS === */
+.gestionproductos-container {
+  text-align: right;
+  margin: 20px 0 30px 0;
+}
+
+.btn-gestionproductos {
+  display: inline-block;
+  background-color: #0a9396;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.btn-gestionproductos i {
+  margin-right: 8px;
+}
+
+.btn-gestionproductos:hover {
+  background-color: #65dce0;
+  color: #001f30;
+  transform: translateY(-2px);
 }

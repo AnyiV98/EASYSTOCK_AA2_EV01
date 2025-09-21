@@ -1,0 +1,394 @@
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {    
+      font-family: "Roboto", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+      display: flex;
+      height: 100%;
+    }
+    .menu-icon { /*ICONO DEL MENU*/
+      position: absolute;  
+      top: 5px;
+      left: 1rem;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    .sidebar {
+      width: 250px;
+      background-color: #e0f2f1;
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid #ccc;
+    }
+    .contenedor-m {  /*LOGO EASYSTOCK*/
+      width: 20rem;
+    
+      }
+      img.contenedor-m { /*LOGO EASYSTOCK*/
+          position: absolute;
+        top: -6rem;
+        right: 0;
+      }
+
+    .user-info {
+      background-color: #26a69a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .menu { /*AJUSTES DEL MENÚ SIDEBAR*/
+      padding: 20px;
+    }
+
+    .menu i {
+  padding: 2.5px;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+    .main-content {
+      flex: 1;
+      background-color: #001f30;
+      color: white;
+      padding: 40px;
+      position: relative;
+      
+
+    }
+
+    .main-content h1 { /*FERRETERIA EL GRILLO*/
+      font-size: 30px;
+      color: #26a69a;
+      margin-bottom: 10px;
+    }
+
+  .main-content h3 { /*GESTION DE PRODUCTO TITULO*/
+      color: #a0d8d3;
+      margin-bottom: 40px;
+    }
+    
+
+  .main-content h4 {     /*ADMINISTRADOR*/
+      color: #a0d8d3;
+      margin-bottom: 40px;
+    }
+
+
+
+span{
+      display: block;
+      line-height: 4rem;
+    }
+a {
+  color: #333;
+  text-decoration-line: none;
+
+}
+
+h3 {
+  color: #65dce0;
+  font-size: 2.3rem;
+  text-align: left;
+  margin-top: -2rem;
+}
+
+h4 {
+  color: #65dce0;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+
+.operaciones h3 {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+.operaciones-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.boton-nuevo-envio {
+  align-self: flex-end;
+}
+
+.btn-nuevo-envio {
+    font-family: "Roboto", sans-serif;
+    display: block;
+    padding: .7rem;
+    margin: 0 auto;
+    background: #65dce0;
+    color: #000 !important;
+    border: #65dce0;
+    border-radius: 9px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: -2rem;
+    position: relative;
+    z-index: 1;
+    
+} 
+
+
+
+
+
+/* Título Pedidos Activos */
+.pedidosactivos h2 {
+  font-size: 1.8rem;       /* Más grande que el texto normal */
+  color: #65dce0;           /* Color turquesa característico */
+  margin-bottom: 20px;      /* Separación con la tabla */
+  font-weight: 600;
+  border-bottom: 2px solid #26a69a;  /* Línea decorativa debajo */
+  padding-bottom: 6px;      /* Espacio entre texto y línea */
+  letter-spacing: 0.5px;    /* Mejor legibilidad */
+  text-transform: uppercase; /* Opcional: todo en mayúsculas */
+
+}
+
+.devoluciones h2 {
+  font-size: 1.8rem;       /* Más grande que el texto normal */
+  color: #65dce0;           /* Color turquesa característico */
+  margin-bottom: 20px;      /* Separación con la tabla */
+  font-weight: 600;
+  border-bottom: 2px solid #26a69a;  /* Línea decorativa debajo */
+  padding-bottom: 6px;      /* Espacio entre texto y línea */
+  letter-spacing: 0.5px;    /* Mejor legibilidad */
+  text-transform: uppercase; /* Opcional: todo en mayúsculas */
+
+}
+
+.historialpedidos h2 {
+  font-size: 1.8rem;       /* Más grande que el texto normal */
+  color: #65dce0;           /* Color turquesa característico */
+  margin-bottom: 20px;      /* Separación con la tabla */
+  font-weight: 600;
+  border-bottom: 2px solid #26a69a;  /* Línea decorativa debajo */
+  padding-bottom: 6px;      /* Espacio entre texto y línea */
+  letter-spacing: 0.5px;    /* Mejor legibilidad */
+  text-transform: uppercase; /* Opcional: todo en mayúsculas */
+
+}
+
+/* Encabezado de tabla */
+
+.tabla-pedidosactivos{
+  width: 90%;             /* Ocupa el 90% del contenedor */
+  max-width: 1200px;      /* Ancho máximo para pantallas grandes */
+  margin: 0 auto;         /* Centrar horizontalmente */
+  border-collapse: collapse;
+
+}
+.tabla-pedidosactivos thead {
+  background-color: #003a4e;
+}
+
+.tabla-pedidosactivos thead th {
+  padding: 14px 12px;
+  text-align: center;
+  font-weight: 600;
+  color: #65dce0;
+  font-size: 14px;
+  border-bottom: 2px solid #005066;
+}
+
+/* Cuerpo de tabla */
+.tabla-pedidosactivos tbody td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #00394d;
+  font-size: 12px;
+}
+
+/* Zebra alternado */
+.tabla-pedidosactivos tbody tr:nth-child(even) {
+  background-color: #002b3a;
+}
+
+
+/* Centrar botones dentro de la celda de acciones */
+.tabla-pedidosactivos td:last-child {
+  text-align: center;
+  
+}
+
+/* Agrupar y centrar los botones */
+.tabla-pedidosactivos .acciones {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 8px; 
+  
+}
+/* Contenedor de botones */
+.tabla-pedidosactivos .acciones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Estilo base de todos los botones de acción */
+.tabla-pedidosactivos .acciones button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 40px;
+  min-height: 36px;
+  color: #001f30;
+  font-weight: bold;
+}
+
+/* Botón Ver */
+.btn-ver {
+  background-color: #65dce0;
+}
+.btn-ver:hover {
+  background-color: #26a69a;
+  color: #fff;
+}
+
+/* Botón Reprogramar */
+.btn-reprogramar {
+  background-color: #ffb74d;
+}
+.btn-reprogramar:hover {
+  background-color: #ffa000;
+  color: #fff;
+}
+
+/* Botón Devolución */
+.btn-devolver {
+  background-color: #ef5350;
+}
+.btn-devolver:hover {
+  background-color: #d32f2f;
+  color: #fff;
+}
+
+/* Botón Comentar */
+.btn-comentar {
+  background-color: #42a5f5;
+}
+.btn-comentar:hover {
+  background-color: #1e88e5;
+  color: #fff;
+}
+
+/* Iconos dentro de los botones (opcional para que se vea centrado) */
+.tabla-pedidosactivos .acciones button i {
+  margin-right: 4px;
+}
+
+/* Ajuste responsive: reduce tamaño de botones en pantallas pequeñas */
+@media (max-width: 768px) {
+  .tabla-pedidosactivos .acciones button {
+    padding: 4px 6px;
+    font-size: 12px;
+    min-width: 32px;
+    min-height: 32px;
+  }
+}
+
+/* Espacio entre filtros y tabla */
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter {
+  margin-bottom: 20px;
+}
+
+
+/* Tamaño del select de cantidad de registros */
+.dataTables_length select {
+  font-size: 14px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  background-color: #062e34;
+  color: grey;
+  border: 1px solid #0a9396;
+}
+
+/* Etiqueta "Search:" */
+.dataTables_wrapper .dataTables_filter label {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Input de búsqueda */
+.dataTables_wrapper .dataTables_filter input {
+  font-size: 14px;
+  padding: 6px 10px;
+  border: 1px solid #0a9396;
+  border-radius: 6px;
+  background-color: #062e34;
+  color: #ffffff;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.dataTables_wrapper .dataTables_filter input:focus {
+  border-color: #65dce0;
+}
+
+
+
+/* Contenedor de los botones de paginación */
+.dataTables_wrapper .dataTables_paginate {
+  margin-top: 16px;
+  display: flex !important;
+  justify-content: flex-end; /* O usa center si quieres centrar */
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: visible !important;
+}
+
+/* Botones de paginación comunes (Previous, Next, números) */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  display: inline-block !important;
+  font-size: 14px !important;
+  padding: 4px 10px !important;
+  margin: 2px;
+  background-color: #094d5b !important;
+  color: #ffffff !important;
+  border-radius: 6px !important;
+  border: none !important;
+  cursor: pointer;
+  box-shadow: none !important;
+  line-height: 1.4 !important;
+  height: auto !important;
+  width: auto !important;
+  text-align: center !important;
+}
+
+/* Botón de página actual (activo) */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  background-color: #65dce0 !important;
+  color: #000 !important;
+  font-weight: bold !important;
+}
+
+/* Hover selector de pagina */
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background-color: #0a9396 !important;
+  color: #fff !important;
+}

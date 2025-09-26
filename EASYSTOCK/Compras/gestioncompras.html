@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EasyStock | Proveedores</title>
+    <title>EasyStock | Gestion Compras</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
 
 
 
-<link rel="stylesheet" href="../Styles/gestionproveedor.css">
+<link rel="stylesheet" href="../Styles/gestioncompras.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -46,58 +46,55 @@
     <h1>Ferretería El Grillo</h1>
     <h4>Administrador</h4>
 
-    <section class="proveedor">
-   <div class="proveedor-header">
-        <h3><i class="fas fa-box-open"></i> Lista de Proveedores</h3>
-        <div class="contenedor-botones">
-          <a href="./registroproveedor.html" class="btn-nuevo-proveedor">
-             <i class="fas fa-plus"></i> Nuevo Proveedor
-          </a>
-          <a href="../Compras/gestioncompras.html" class="btn-gestion-compras">
-             <i class="fas fa-shopping-cart"></i> Gestión Compras
+    <section class="compras">
+   <div class="compras-header">
+        <h3><i class="fas fa-clipboard-list"></i> Gestion Compras</h3>
+        <div class="boton-nueva-compra">
+          <a href="./registrocompra.html">
+            <button class="btn-nueva-compra"><i class="fas fa-plus"></i> Nueva Compra</button>
           </a>
         </div>
     </div>
 
+  <div class="resumen-compras">
+  <div class="card-resumen">
+    <h4>PROVEEDOR MÁS FRECUENTE</h4>
+    <p class="valor">Proveedor A</p>
+    <small>15 pedidos</small>
+  </div>
 
-    <div class="filtro-avanzado">
-  <form action="filtro.php" method="GET">
-    <div class="campo">
-      <label for="proveedor">Nombre proveedor:</label>
-      <input type="text" id="proveedor" name="proveedor" placeholder="Escribe el nombre...">
-    </div>
-
-    <div class="acciones">
-      <button type="submit">🔍 Buscar</button>
-      <button type="reset">❌ Limpiar</button>
-    </div>
-  </form>
+  <div class="card-resumen">
+    <h4>TOTAL GASTADO EN EL MES</h4>
+    <p class="valor">$ 8,540,000</p>
+    <small>Septiembre 2025</small>
+  </div>
 </div>
 
 
-  <!-- Tabla proveedor -->
+
+  <!-- Tabla ordenes de compra -->
  
 <section>
-  <table class="tabla-proveedor">
+  <table class="tabla-ordenes">
     <thead>
       <tr>
-        <th>NOMBRE DEL PROVEEDOR</th>
-        <th>EMPRESA</th>
-        <th>NIT</th>
-        <th>CONTACTO PRINCIPAL</th>
-        <th>TELEFONO</th>
-        <th>TIEMPO DE RELACION</th>
+        <th>NUMERO ORDEN</th>
+        <th>PROVEEDOR</th>
+        <th>PRODUCTOS SOLICITADOS</th>
+        <th>FECHA CREACION</th>
+        <th>FECHA ENTREGA</th>
+        <th>ESTADO</th>
         <th>ACCIONES</th>
       </tr>
     </thead>
     <tbody>
       <tr>
+        <td>001</td>
         <td>Proveedor A</td>
-        <td>Empresa A</td>
-        <td>99.999.999-9</td>
-        <td>Luis Alfonso</td>
-        <td>123456789</td>
-        <td>2 años</td>
+        <td>6</td>
+        <td>20/09/2025</td>
+        <td>29/09/2025</td>
+        <td>Aprobada</td>
         <td>
           <div class="acciones">
             <button class="btn-ver" title="Ver">🔍</button>
@@ -109,12 +106,12 @@
       </tr>
 
       <tr>
+        <td>002</td>
         <td>Proveedor B</td>
-        <td>Empresa B</td>
-        <td>88.888.888-8</td>
-        <td>Marta Campos</td>
-        <td>111223344</td>
-        <td>3 años</td>
+        <td>2</td>
+        <td>20/09/2025</td>
+        <td>00/00/0000</td>
+        <td>Pendiente</td>
         <td>
           <div class="acciones">
             <button class="btn-ver" title="Ver">🔍</button>
@@ -125,12 +122,12 @@
       </tr>
 
       <tr>
+        <td>003</td>
         <td>Proveedor C</td>
-        <td>Empresa C</td>
-        <td>77.777.777-7</td>
-        <td>Augusto Bolivar</td>
-        <td>123665599</td>
-        <td>11 meses</td>
+        <td>4</td>
+        <td>19/09/2025</td>
+        <td>22/09/2025</td>
+        <td>Entregada</td>
         <td>
           <div class="acciones">
             <button class="btn-ver" title="Ver">🔍</button>
@@ -140,12 +137,12 @@
         </td>
      </tr>
       <tr>
+        <td>004</td>
         <td>Proveedor D</td>
-        <td>Empresa D</td>
-        <td>66.666.666-6</td>
-        <td>Luis Alfonso</td>
-        <td>123156479</td>        
-        <td>3 meses</td>
+        <td>1</td>
+        <td>20/09/2025</td>
+        <td>25/09/2025</td>        
+        <td>Entregada</td>
         <td>
           <div class="acciones">
             <button class="btn-ver" title="Ver">🔍</button>
@@ -161,7 +158,7 @@
 <!-- Script para activar DataTables -->
 <script>
   $(document).ready(function () {
-    $('.tabla-proveedor').DataTable({
+    $('.tabla-ordenes').DataTable({
       pageLength: 4,
       lengthMenu: [[4, 8, 10], [4, 8, 10]],
       language: {

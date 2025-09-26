@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EasyStock | Registro de compras</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="../Styles/registrocompra.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    
+  <div class="sidebar">
+    <div class="menu-icon">&#9776;
+    </div>
+    <div class="user-info">Felipe Casanova
+    </div>
+    <div class="menu">
+      <span>
+        <a href="../index.html"><i class="fas fa-sync-alt"></i> Actualizar datos</a href="./index.html">
+      </span>
+     <span>
+ <a href="../index.html" class="menu-itemcom"><i class="fas fa-user-cog"></i> Mantención de usuarios</a>
+     </span>
+     <span>
+      <a href="../index.html" class="menu-itemlog"><i class="fas fa-cogs"></i> Configuración</a>
+      </span>
+      </div>
+  </div>
+
+    <div class="main-content">
+<a href="../index.html">
+         <img class="contenedor-m" src="../image/icono.png" alt="Logo">
+    </a>
+
+    <h1>Ferretería El Grillo</h1>
+    <h4>Administrador</h4>
+
+<!-- REGISTRO DE COMPRA -->
+    <div class="registro"><h3><i class="fas fa-file-invoice"></i> Nueva Orden de Compra</h3>
+    </div>
+
+
+  <form action="../Compras/gestioncompras.html" method="post" class="formulario" novalidate>
+    
+    <fieldset>
+        <legend>Datos del Proveedor</legend>
+
+           <div>
+            <label for="nombre-proveedor">Nombre del Proveedor</label>
+            <input type="text" id="nombre-proveedor" name="nombre-proveedor" placeholder="Nombre del proveedor" required>
+
+            <label for="documento-proveedor">NIT / Documento</label>
+            <input type="text" id="documento-proveedor" name="documento-proveedor" placeholder="Número de documento" required>
+
+            <label for="direccion-proveedor">Dirección</label>
+            <input type="text" id="direccion-proveedor" name="direccion-proveedor" placeholder="Dirección del proveedor">
+
+            <label for="telefono-proveedor">Teléfono</label>
+            <input type="tel" id="telefono-proveedor" name="telefono-proveedor" placeholder="Teléfono del proveedor">
+        </div>
+    </fieldset>
+
+    <!-- Información de la Orden de Compra -->
+    <fieldset>
+        <legend>Información</legend>
+        <div>
+            <label for="numero-orden">Número de Orden</label>
+            <input type="text" id="numero-orden" name="numero-orden" placeholder="Número de la orden" required>
+
+            <label for="fecha-orden">Fecha</label>
+            <input type="date" id="fecha-orden" name="fecha-orden" required>
+
+            <label for="tipo-orden">Tipo de Orden</label>
+            <select id="tipo-orden" name="tipo-orden" required>
+                <option value="">Selecciona...</option>
+                <option value="compra">Compra normal</option>
+                <option value="urgente">Compra urgente</option>
+            </select>
+        </div>
+    </fieldset>
+
+    <fieldset class="tabla-productos">
+    <legend>Agregar Producto</legend>
+    
+    <div class="contenido-tabla">
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Producto</th>
+                    <th>Categoría</th>
+                    <th>Unidad de Medida</th>
+                    <th>Cantidad</th>
+                    <th>Observaciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" placeholder="001" name="codigo[]"></td>
+                    <td><input type="text" placeholder="Martillo" name="producto[]"></td>
+                    <td><input type="text" placeholder="Herramientas" name="categoria[]"></td>
+                    <td><input type="text" name="unidad_medida[]" placeholder="caja" style="width:80px;"></td>
+                    <td><input type="number" placeholder="3" name="cantidad[]" min="0"></td>
+                    <td><input type="text" placeholder="Observaciones" name="observaciones[]"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="contenedor-b">  
+            <input type="submit" class="boton" value="Agregar">
+            <input type="submit" class="boton" value="Modificar">
+            <input type="submit" class="boton" value="Eliminar">
+        </div>
+    </div>
+</fieldset>
+
+
+
+    <div class="contenedor-b">
+        
+        <input type="submit" class="boton"  value="Guardar Venta">
+        <input type="submit" class="boton"  value="Cancelar Venta">
+    </div>
+
+      
+</form>
+  
+</body>
+</html>

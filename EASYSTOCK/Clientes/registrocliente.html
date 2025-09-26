@@ -35,104 +35,83 @@
     </div>
 
     <form action="./gestionclientes.html" method="post" class="formulario-cliente" novalidate>
-      
-      <fieldset>
-        <legend><i class="fas fa-user-tag"></i> Tipo de Cliente</legend>
-        <div class="grupo-radio">
-          <label><input type="radio" name="tipo_cliente" value="Persona Natural"> Persona Natural</label>
-          <label><input type="radio" name="tipo_cliente" value="Persona Jurídica"> Persona Jurídica</label>
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <legend><i class="fas fa-user"></i> Datos de Persona Natural</legend>
-        
-        <div class="form-row">
-          <div class="form-group">
-            <label for="nombre"><i class="fas fa-user"></i> Nombre completo:</label>
-            <input type="text" id="nombre" name="nombre">
-          </div>
-          <div class="form-group">
-            <label for="cedula"><i class="fas fa-id-card"></i> Cédula:</label>
-            <input type="text" id="cedula" name="cedula">
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="celular"><i class="fas fa-phone"></i> Celular:</label>
-            <input type="tel" id="celular" name="celular">
-          </div>
-          <div class="form-group">
-            <label for="email"><i class="fas fa-envelope"></i> Correo electrónico:</label>
-            <input type="email" id="email" name="email">
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="direccion"><i class="fas fa-map-marker-alt"></i> Dirección:</label>
-            <input type="text" id="direccion" name="direccion">
-          </div>
-          <div class="form-group">
-            <label for="ciudad"><i class="fas fa-city"></i> Ciudad:</label>
-            <input type="text" id="ciudad" name="ciudad">
-          </div>
-        </div>
-      </fieldset>
-
-       <fieldset>
-        <legend><i class="fas fa-building"></i> Datos de Persona Jurídica</legend>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="razon_social"><i class="fas fa-building"></i> Razón social:</label>
-            <input type="text" id="razon_social" name="razon_social">
-          </div>
-          <div class="form-group">
-            <label for="nit"><i class="fas fa-id-badge"></i> NIT:</label>
-            <input type="text" id="nit" name="nit">
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="representante"><i class="fas fa-user-tie"></i> Representante legal:</label>
-            <input type="text" id="representante" name="representante">
-          </div>
-          <div class="form-group">
-            <label for="celular_juridico"><i class="fas fa-phone"></i> Celular:</label>
-            <input type="tel" id="celular_juridico" name="celular_juridico">
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="email_juridico"><i class="fas fa-envelope"></i> Correo electrónico:</label>
-            <input type="email" id="email_juridico" name="email_juridico">
-          </div>
-          <div class="form-group">
-            <label for="direccion_juridico"><i class="fas fa-map-marker-alt"></i> Dirección:</label>
-            <input type="text" id="direccion_juridico" name="direccion_juridico">
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="ciudad_juridico"><i class="fas fa-city"></i> Ciudad:</label>
-            <input type="text" id="ciudad_juridico" name="ciudad_juridico">
-          </div>
-        </div>
-      </fieldset>
-
-      
-          <div class="contenedor-b">
-        
-        <input type="submit" class="boton"  value="Guardar">
-        <input type="submit" class="boton"  value="Cancelar">
+   <fieldset>   
+    <legend>Agregar</legend>
+    <div class="form-row">
+    <div class="form-group">
+      <label for="id_cliente"><i class="fas fa-id-badge"></i> ID Cliente</label>
+      <input type="text" id="id_cliente" name="id_cliente" readonly>
     </div>
+    <div class="form-group">
+      <label for="nombre"><i class="fas fa-user"></i> Nombre completo</label>
+      <input type="text" id="nombre" name="nombre" required>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="tipo_cliente"><i class="fas fa-user-tag"></i> Tipo de Cliente</label>
+      <select id="tipo_cliente" name="tipo_cliente" required>
+        <option value="">Seleccione...</option>
+        <option value="Natural">Persona Natural</option>
+        <option value="Juridica">Persona Jurídica</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="tipo_documento"><i class="fas fa-id-card"></i> Tipo de Documento</label>
+      <select id="tipo_documento" name="tipo_documento" required>
+        <option value="">Seleccione...</option>
+        <option value="CC">Cédula de Ciudadanía</option>
+        <option value="CE">Cédula de Extranjería</option>
+        <option value="NIT">NIT</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="numero_documento"><i class="fas fa-hashtag"></i> Número de Documento</label>
+      <input type="text" id="numero_documento" name="numero_documento" required>
+    </div>
+    <div class="form-group">
+      <label for="correo"><i class="fas fa-envelope"></i> Correo electrónico</label>
+      <input type="email" id="correo" name="correo" required>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="celular"><i class="fas fa-phone"></i> Celular</label>
+      <input type="tel" id="celular" name="celular" required>
+    </div>
+    <div class="form-group">
+      <label for="direccion"><i class="fas fa-map-marker-alt"></i> Dirección</label>
+      <input type="text" id="direccion" name="direccion" required>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="ciudad"><i class="fas fa-city"></i> Ciudad</label>
+      <input type="text" id="ciudad" name="ciudad" required>
+    </div>
+    <div class="form-group">
+      <label for="fecha_creacion"><i class="fas fa-calendar-alt"></i> Fecha de Creación</label>
+      <input type="date" id="fecha_creacion" name="fecha_creacion" readonly>
+    </div>
+  </div>
+   </fieldset>
+
+  <div class="form-buttons">
+  <button type="submit" class="btn-guardar">
+    <i class="fas fa-save"></i> Guardar Cliente
+  </button>
+  <button type="button" class="btn-cancelar" onclick="history.back()">
+    <i class="fas fa-times"></i> Cancelar
+  </button>
+</div>
+
 
     </form>
-  </div>
 </body>
 </html>

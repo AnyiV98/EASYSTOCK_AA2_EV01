@@ -107,59 +107,43 @@ h4 {
 }
 
 
-.proveedor h3 {
+.compras h3 {
   margin: 0;
   text-align: center;
   width: 100%;
 }
-.proveedor-header {
+.compras-header {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 10px;
   margin-bottom: 20px;
 }
+.boton-nueva-compra {
+  align-self: flex-end;
+}
 
 .contenedor-botones {
   display: flex;
-  flex-direction: column; /* apila los botones uno debajo del otro */
-  align-items: flex-start; /* los botones empiezan desde la izquierda */
-  gap: 10px; /* espacio entre los botones */
+  justify-content: flex-end; /* los manda a la derecha */
+  gap: 10px; /* espacio entre botones */
   margin-bottom: 1rem;
 }
 
-/* Botones comunes */
-.btn-nuevo-proveedor,
-.btn-gestion-compras {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  border-radius: 6px;
+.btn-nueva-compra {
+  font-family: "Roboto", sans-serif;
+  display: block;
+  padding: .7rem 1rem;
+  background: #65dce0;
+  color: #000 !important;
+  border: #65dce0;
+  border-radius: 9px;
   font-size: 14px;
   cursor: pointer;
-  text-decoration: none;
-  color: #fff;
-  transition: background 0.3s;
+  position: relative;
+  z-index: 1;
 }
 
-/* Colores individuales */
-.btn-nuevo-proveedor {
-  background-color: #65dce0; /* color que quieras */
-  color: #000;
-}
-
-.btn-nuevo-proveedor:hover {
-  background-color: #4ac9cc;
-}
-
-.btn-gestion-compras {
-  background-color: #065a60; /* color distinto */
-}
-
-.btn-gestion-compras:hover {
-  background-color: #04838c;
-}
 
 
 /* Espacio entre filtros y tabla */
@@ -207,8 +191,8 @@ h4 {
 
 
 
-/* ESTILO PARA LA TABLA DE inventario */
-.tabla-proveedor {
+/* ESTILO PARA LA TABLA DE ORDENES DE COMPRA */
+.tabla-ordenes {
   width: 100%;
   border-collapse: collapse;
   background-color: #001f2f;
@@ -220,18 +204,19 @@ h4 {
 }
 
 /* Aplica borde a TODA la tabla */
-.tabla-proveedor,
-.tabla-proveedor th,
-.tabla-proveedor td {
+.tabla-ordenes,
+.tabla-ordenes th,
+.tabla-ordenes td {
   border: 1px solid #007c91;  
 }
 
+
 /* Encabezado de tabla */
-.tabla-proveedor thead {
+.tabla-ordenes thead {
   background-color: #003a4e;
 }
 
-.tabla-proveedor thead th {
+.tabla-ordenes thead th {
   padding: 14px 12px;
   text-align: center;
   font-weight: 600;
@@ -241,26 +226,26 @@ h4 {
 }
 
 /* Cuerpo de tabla */
-.tabla-proveedor tbody td {
+.tabla-ordenes tbody td {
   padding: 12px 10px;
   border-bottom: 1px solid #00394d;
   font-size: 12px;
 }
 
 /* Zebra alternado */
-.tabla-proveedor tbody tr:nth-child(even) {
+.tabla-ordenes tbody tr:nth-child(even) {
   background-color: #002b3a;
 }
 
 
 /* Centrar botones dentro de la celda de acciones */
-.tabla-proveedor td:last-child {
+.tabla-ordenes td:last-child {
   text-align: center;
   
 }
 
 /* Agrupar y centrar los botones */
-.tabla-proveedor .acciones {
+.tabla-ordenes .acciones {
   display: flex;
   justify-content: center; 
   align-items: center;
@@ -269,7 +254,7 @@ h4 {
 }
 
 /* Estilos individuales de los botones */
-.tabla-proveedor td button {
+.tabla-ordenes td button {
   background-color: #065a60;
   color: white;
   border: none;
@@ -284,7 +269,7 @@ h4 {
 }
 
 /* Hover */
-.tabla-proveedor td button:hover {
+.tabla-ordenes td button:hover {
   background-color: #0a9396;
 }
 
@@ -331,42 +316,42 @@ h4 {
 }
 
 
-.filtro-avanzado {
-  margin: -60px 0 15px 30px; /* sube el bloque y lo deja a la izquierda */
-  font-family: "Roboto", sans-serif;
-}
-
-.filtro-avanzado form {
+.resumen-compras {
   display: flex;
-  align-items: center;
-  gap: 10px; /* espacio entre input y botones */
+  gap: 20px;
+  margin: 20px 0;
 }
 
-.filtro-avanzado label {
+
+.card-resumen {
+  flex: 1;
+  background-color: #003b4c; 
+  border: 1px solid #00bcd4;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.card-resumen h4 {
+  font-size: 12px;
   font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: #80deea;
 }
 
-.filtro-avanzado input {
-  padding: 6px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.filtro-avanzado button {
-  padding: 6px 12px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+.card-resumen .valor {
+  font-size: 22px;
   font-weight: bold;
+  margin: 0;
+  color: #ffffff;
 }
 
-.filtro-avanzado button[type="submit"] {
-  background: #65dce0;
-  color: #000;
-}
-
-.filtro-avanzado button[type="reset"] {
-  background: #ddd;
-  color: #333;
+.card-resumen small {
+  display: block;
+  margin-top: 8px;
+  font-size: 11px;
+  color: #b2ebf2;
 }
 

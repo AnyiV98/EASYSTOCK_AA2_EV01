@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EasyStock | Actualizar Datos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+<!-- DataTables CSS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+
+<!-- DataTables JS -->
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+
+
+<link rel="stylesheet" href="../styles/actualizar.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="menu-icon">&#9776;
+    </div>
+    <div class="user-info">Felipe Casanova
+    </div>
+    <div class="menu">
+      <span>
+        <a href="../index.html"><i class="fas fa-sync-alt"></i> Actualizar datos</a>
+      </span>
+     <span>
+ <a href="../index.html" class="menu-itemcom"><i class="fas fa-user-cog"></i> Mantención de usuarios</a>
+     </span>
+     <span>
+      <a href="../index.html" class="menu-itemlog"><i class="fas fa-cogs"></i> Configuración</a>
+      </span>
+      </div>
+  </div>
+  
+    <div class="main-content">
+<a href="../index.html">
+         <img class="contenedor-m" src="../image/icono.png" alt="Logo">
+    </a>
+
+    <h1>Ferretería El Grillo</h1>
+    <h4>Administrador</h4>
+
+    <section class="Usuarios">
+    <div class="GestionUsuarios">
+       <h3><i class="fas fa-user-check"></i> Actualizar Datos</h3>
+    </div>
+
+  <form>
+    <fieldset>
+  <legend>Información Personal</legend>
+  <div class="grid-2">
+    <div>
+      <label>Nombre completo</label>
+      <input type="text" name="nombre_completo" placeholder="Nombre completo" required>
+    </div>
+    <div>
+      <label>Tipo de identificación</label>
+      <select name="tipo_identificacion" required>
+        <option value="">Seleccione...</option>
+        <option value="cc">Cédula de Ciudadanía</option>
+        <option value="ce">Cédula de Extranjería</option>
+      </select>
+    </div>
+    <div>
+      <label>Número de identificación</label>
+      <input type="text" name="numero_identificacion" placeholder="Número de identificación" required>
+    </div>
+    <div>
+      <label>Fecha de nacimiento</label>
+      <input type="date" name="fecha_nacimiento">
+    </div>
+    <div>
+      <label>Dirección</label>
+      <input type="text" name="direccion" placeholder="Dirección del empleado">
+    </div>
+    <div>
+      <label>Teléfono</label>
+      <input type="tel" name="telefono" placeholder="Teléfono">
+    </div>
+  </div>
+</fieldset>
+
+<fieldset>
+  <legend>Información Laboral</legend>
+  <div class="grid-2">
+    <div>
+      <label>Cargo</label>
+      <input type="text" name="cargo" placeholder="Cargo">
+    </div>
+    <div>
+      <label>Contraseña</label>
+      <input type="password" name="contrasena" placeholder="Contraseña">
+    </div>
+    <div>
+      <label>Departamento</label>
+      <select name="departamento">
+        <option value="">Seleccione...</option>
+        <option value="administrativo">Administrativo</option>
+        <option value="comercial">Comercial</option>
+        <option value="logistico">Logístico</option>
+      </select>
+    </div>
+    <div>
+      <label>Fecha de ingreso</label>
+      <input type="date" name="fecha_ingreso">
+    </div>
+  </div>
+
+  <label>Permisos</label>
+  <div class="permisos">
+    <label><input type="checkbox" name="permisos" value="operaciones"> Operaciones</label>
+    <label><input type="checkbox" name="permisos" value="ventas"> Ventas</label>
+    <label><input type="checkbox" name="permisos" value="inventario"> Inventario</label>
+    <label><input type="checkbox" name="permisos" value="reportes"> Reportes</label>
+    <label><input type="checkbox" name="permisos" value="proveedores"> Proveedores</label>
+    <label><input type="checkbox" name="permisos" value="clientes"> Clientes</label>
+    <label><input type="checkbox" name="permisos" value="configuracion"> Configuración</label>
+    <label><input type="checkbox" name="permisos" value="usuarios"> Mantención de usuarios</label>
+    <label><input type="checkbox" name="permisos" value="actualizar"> Actualizar datos</label>
+  </div>
+</fieldset>
+
+<div class="form-buttons">
+  <button type="submit" class="btn-guardar">
+    <i class="fas fa-save"></i> Guardar Cliente
+  </button>
+  <button type="button" class="btn-cancelar" onclick="history.back()">
+    <i class="fas fa-times"></i> Cancelar
+  </button>
+</div>
+
+</form>
+</body>
+</html>
